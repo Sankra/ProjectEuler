@@ -17,6 +17,8 @@ namespace ProjectEulerCSharp {
 		public Problem92() {
 		}
 
+		// First try: 9.4536430s
+		// Second try: 7.4951470s
 		public int FindNumberOfChainsArrivingAt89ForNumbersBelow(int limit) {
 			int n = 0;
 			Parallel.For(2, limit, i => {
@@ -34,8 +36,7 @@ namespace ProjectEulerCSharp {
 		// Hva om vi husker tall som har oppstått før?
 		private static bool NumberChainArrivesAt89(int number) {
 			while (true) {
-				var digits = Digitize(number);
-				number = SquareOfDigits(digits);
+				number = DigitizeAndSquare(number);
 				if (number == 1) {
 					return false;
 				}
@@ -46,20 +47,12 @@ namespace ProjectEulerCSharp {
 			}
 		}
 
-		private static int[] Digitize(int number) {
+		private static int DigitizeAndSquare(int number) {
 			var s = number.ToString();
-			var digits = new int[s.Length];
-			for(int i = 0; i < s.Length; ++i) {
-				digits[i] = int.Parse(s[i].ToString());
-			}
-
-			return digits;
-		}
-
-		private static int SquareOfDigits(int[] digits) {
 			var squareOfDigits = 0;
-			for(int i = 0; i < digits.Length; ++i) {
-				squareOfDigits += digits[i] * digits[i];
+			for(int i = 0; i < s.Length; ++i) {
+				var digit = int.Parse(s[i].ToString());
+				squareOfDigits += digit * digit;
 			}
 
 			return squareOfDigits;

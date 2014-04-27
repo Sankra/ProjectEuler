@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjectEulerCSharp</RootNamespace>
     <AssemblyName>ProjectEulerCSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -44,12 +44,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Mono.Security" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problem11.cs" />
     <Compile Include="Problem50.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Problem92.cs" />
+    <Compile Include="Problem97.cs" />
+    <Compile Include="Problem52.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\20x20Grid.txt">

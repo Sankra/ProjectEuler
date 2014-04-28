@@ -8,17 +8,9 @@ namespace ProjectEulerCSharp {
 //		However, in 2004 there was found a massive non-Mersenne prime which contains 2,357,207 digits: 28433×27830457+1.
 //
 //		Find the last ten digits of this prime number.
-		public Problem97() {
-		}
-
 		public string GetTenLastDigits() {
-			var first = new BigInteger(28433);
-			var second = BigInteger.Pow(2, 7830457);
-			var number = first * second + new BigInteger(1D);
-			var numberAsString = number.ToString();
-			 
-
-			return numberAsString;
+			var prime = 28433 * BigInteger.ModPow(2, 7830457, 10000000000) + 1;
+			return (prime % 10000000000).ToString();
 		}
 	}
 }

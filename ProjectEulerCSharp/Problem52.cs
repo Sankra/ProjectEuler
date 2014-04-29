@@ -9,11 +9,11 @@ namespace ProjectEulerCSharp {
 		public Problem52() {
 		}
 
-		public int FindSmallestIntegerWhereMultiplesContainsSameDigits() {
+		public string FindSmallestIntegerWhereMultiplesContainsSameDigits() {
 			int i = 1;
 			while (true) {
 				if (ContainsSameDigits(i)) {
-					return i;
+					return i.ToString();
 				}
 
 				++i;

@@ -8,36 +8,36 @@ namespace TestProjectEulerCSharp2 {
 		[Test]
 		public void Problem92() {
 			var problem92 = new Problem92();
-
-			var start = DateTime.UtcNow;
-			var n = problem92.FindNumberOfChainsArrivingAt89ForNumbersBelow(10000000);
-			var end = DateTime.UtcNow;
-
-			Console.WriteLine(n);
-			Console.WriteLine("Duration: " + (end - start));
+			SolveProblemAndPrintResults(() => problem92.FindNumberOfChainsArrivingAt89ForNumbersBelow(10000000));
 		}
 
 		[Test]
 		public void Problem97() {
 			var problem97 = new Problem97();
-
-			var start = DateTime.UtcNow;
-			var lastDigits = problem97.GetTenLastDigits();
-			var end = DateTime.UtcNow;
-
-			Console.WriteLine(lastDigits);
-			Console.WriteLine("Duration: " + (end - start));
+			SolveProblemAndPrintResults(problem97.GetTenLastDigits);
 		}
 
 		[Test]
 		public void Problem52() {
 			var problem52 = new Problem52();
+			SolveProblemAndPrintResults(problem52.FindSmallestIntegerWhereMultiplesContainsSameDigits);
+		}
 
+		[Test]
+		public void Problem17() {
+			var problem17 = new Problem17();
+			Assert.AreEqual("19", problem17.GetLettersFromNumbers(1, 5));
+			Assert.AreEqual("23", problem17.GetLettersFromNumbers(342, 342));
+			Assert.AreEqual("20", problem17.GetLettersFromNumbers(115, 115));
+			SolveProblemAndPrintResults(() => problem17.GetLettersFromNumbers(1, 1000));
+		}
+
+		private void SolveProblemAndPrintResults(Func<string> problem) {
 			var start = DateTime.UtcNow;
-			var smallest = problem52.FindSmallestIntegerWhereMultiplesContainsSameDigits();
+			var result = problem();
 			var end = DateTime.UtcNow;
 
-			Console.WriteLine(smallest);
+			Console.WriteLine(result);
 			Console.WriteLine("Duration: " + (end - start));
 		}
 	}

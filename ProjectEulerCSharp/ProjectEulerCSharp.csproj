@@ -54,6 +54,7 @@
     <Compile Include="Problem92.cs" />
     <Compile Include="Problem97.cs" />
     <Compile Include="Problem52.cs" />
+    <Compile Include="Problem17.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\20x20Grid.txt">

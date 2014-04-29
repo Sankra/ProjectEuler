@@ -19,14 +19,14 @@ namespace ProjectEulerCSharp {
 
 		// First try: 9.4536430s
 		// Second try: 7.4951470s
-		public int FindNumberOfChainsArrivingAt89ForNumbersBelow(int limit) {
+		public string FindNumberOfChainsArrivingAt89ForNumbersBelow(int limit) {
 			int n = 0;
 			Parallel.For(2, limit, i => {
 				if (NumberChainArrivesAt89(i)) {
 					Interlocked.Increment(ref n);
 				}
 			});
-			return n;
+			return n.ToString();
 		}
 		// For alle tall under 10 000 000
 		// Hente siffer ut av tall

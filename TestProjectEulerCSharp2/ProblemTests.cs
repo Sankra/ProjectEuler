@@ -38,6 +38,13 @@ namespace TestProjectEulerCSharp2 {
 			SolveProblemAndPrintResults(() => problem19.GetSundaysOnTheFirstOfTheMonth(new DateTime(1901, 1, 1), new DateTime(2000, 12, 31)));
 		}
 
+		[Test]
+		public void Problem24() {
+			var problem24 = new Problem24();
+			Assert.AreEqual("210", problem24.GetNthLexicographicPermutation(new [] { 0,1,2 }, 6));
+			SolveProblemAndPrintResults(() => problem24.GetNthLexicographicPermutation(new [] { 0,1,2,3,4,5,6,7,8,9 }, 999999));
+		}
+
 		private void SolveProblemAndPrintResults(Func<string> problem) {
 			var start = DateTime.UtcNow;
 			var result = problem();

@@ -32,6 +32,12 @@ namespace TestProjectEulerCSharp2 {
 			SolveProblemAndPrintResults(() => problem17.GetLettersFromNumbers(1, 1000));
 		}
 
+		[Test]
+		public void Problem19() {
+			var problem19 = new Problem19();
+			SolveProblemAndPrintResults(() => problem19.GetSundaysOnTheFirstOfTheMonth(new DateTime(1901, 1, 1), new DateTime(2000, 12, 31)));
+		}
+
 		private void SolveProblemAndPrintResults(Func<string> problem) {
 			var start = DateTime.UtcNow;
 			var result = problem();
